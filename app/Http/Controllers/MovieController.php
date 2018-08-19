@@ -16,20 +16,6 @@ class MovieController extends Controller
     {
         $this->movies = $movies;
         $this->helper = $helper;
-        $this->tvs = $tvs;
-    }
-
-    /**
-     * Show popular tv and movies
-     *
-     * @return Response
-     */
-    public function index(Request $request)
-    {
-        $movies = $this->movies->getPopular();
-        $tvshows = $this->tvs->getPopular();
-
-        return view('movies.index', compact('movies', 'tvshows'));
     }
 
     /**

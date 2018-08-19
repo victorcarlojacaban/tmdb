@@ -32,7 +32,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">TMDB</a>
+            <a class="navbar-brand" href="/">WATCH MOVIES APP</a>
         </div><!-- navbar-header -->
         <div class="navbar-collapse collapse" id="searchbar">
             <ul class="nav navbar-nav">
@@ -47,7 +47,7 @@
                       <li><a href="/movie/upcoming/1"><i class="fa fa-star-half-o"></i> Upcoming</a></li>
                                                     </ul>
                 </li>
-                <li class="dropdown">
+                <!-- <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                       <i class="fa fa-file-video-o"></i> TV Show<span class="caret"></span>
                     </a>
@@ -56,7 +56,7 @@
                         <li><a href="/tv/onair/1"><i class="fa fa-list-alt"></i> On the Air</a></li>
                         <li><a href="/tv/popular/1"><i class="fa fa-star-half-o"></i> Popular TV Series</a></li>
                     </ul>
-                </li>
+                </li> -->
                 <li>&nbsp;</li>
             </ul>
             <form class="navbar-form" method="get" action="/">
