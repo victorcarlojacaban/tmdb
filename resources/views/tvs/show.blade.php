@@ -30,7 +30,7 @@
             <div class="col-md-12">
                 <div class="row">
                 <div class="col-sm-3 col-xs-12 common">
-                {!! $image->getHtml($tv->getPosterImage(), 'w154', 150, 320) !!}
+                {!! $image->getHtml($tv->getPosterImage(), 'w780', 150, 320) !!}
                 <div class="rating-stars text-center">
                     <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
                 </div> <!-- rating-stars -->

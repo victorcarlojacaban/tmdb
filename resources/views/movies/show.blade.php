@@ -55,8 +55,12 @@
                                         </tr>
                                 
                                         <tr><th>Stars</th><td>:</td><td> 
-                                             @foreach ($movie->getCredits()->getCast() as $actor)
-                                               {{ $actor->getName() }}
+                                            <?php $counter = 1;?>
+                                            @foreach ($movie->getCredits()->getCast() as $actor)
+                                                @if ($counter <= 10)
+                                                    {{ $actor->getName() }}
+                                                @endif
+                                               <?php $counter++; ?>
                                             @endforeach
                                         </td></tr>
                                     </tbody>
@@ -84,18 +88,14 @@
             </div>
             <div class="col-md-3 col-xs-12">
                 <div class="text-center h3" style="margin-top: 0;font-size: 18px;">Similar Movies</div>
-                    <?php $counter = 0;?>
-                    @foreach($movie->getSimilar() as $similarMovie)
-                        @if ($counter <=5)
+                    @foreach($movie->getSimilarMovies() as $similarMovie)
                         <div class="col-md-12 similar-movie">
                              <a href="/movie/show/{{ $similarMovie->getID() }}" title="{{ $similarMovie->getTitle() }}" title="{{ $similarMovie->getTitle() }}" class="text-center">
-                              {!! $image->getHtml($similarMovie->getPosterImage(), 'w154', 150, 320) !!}
+                              {!! $image->getHtml($similarMovie->getPosterImage(), 'w780', 150, 320) !!}
                            
                               <span style="font-size: 12px;background-color: rgba(0, 0, 0, 0.77);text-shadow: 1px 1px 1px #000;color: #FFF;padding: 5px;" class="nowrap">{{ $similarMovie->getTitle() }}</span>
                             </a>
                         </div>
-                        @endif
-                      <?php $counter++;?>
                    @endforeach()
             </div>
              @include('include.register-form')

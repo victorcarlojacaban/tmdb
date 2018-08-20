@@ -5,40 +5,24 @@
         echo '<li><a href="'.($id-1).'" aria-label="Previous"><span aria-hidden="true">&laquo; prev</span></a></li>';
     }
 
-    $numbers = range($id, $count);
-    // $output = '';
+    $nums = range(1, $count);
 
-    //  $counter2 = 1;
-    // if ($id == $count) {
-    //     foreach ($numbers as $number){
-    //         echo '<li><a href="'.$number.'">'.($number - 1).'</a></li> '; 
-    //         //  if($counter2 == 6){
-    //         //     echo '<li><a href=""><span aria-hidden="true">....</span></a></li>';                             
-    //         // }elseif($counter2 < 6 || $counter2 > (count($numbers) -3)){
-    //         //     $class = '';
-    //         //     if ($id == $number) {
-    //         //         $class = 'active';
-    //         //     }
+    foreach ($nums as $number) {
+        $class = '';
+        if ($id == $number) {
+            $class = 'active';
+        }
 
-    //         //     echo '<li class="'. $class  .'"><a href="'.$number.'">'.$number.'</a></li>'; 
-    //         // }
-    //     }
-
-    //      $counter2++;
-    // }
-
-    $counter = 1;
-    foreach ($numbers as $number) {
-        if ($counter < 6 || $counter > (count($numbers) -3)){
-            $class = '';
-            if ($id == $number) {
-                $class = 'active';
-            }
-
+        if (in_array($number, range(($id - 6), $id)) && $number !== $id || in_array($number, range(($id + 6), $id))) {
             echo '<li class="'. $class  .'"><a href="'.$number.'">'.$number.'</a></li>'; 
         }
-        $counter++;
+
+        if ($count == $number && $id != $count && (($id + 7) <= $count)) {
+             echo '<li><a href="'.$number.'">....</a></li>'; 
+             echo '<li><a href="'.$number.'">'.$number.'</a></li>'; 
+        }
     }
+
 
     if ($id != $count){
         //Go to previous page to show next 10 items.

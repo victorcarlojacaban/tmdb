@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'TMDB') }}</title>
+    <title>WATCH MOVIES APP</title>
 
     <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
@@ -47,7 +47,7 @@
                       <li><a href="/movie/upcoming/1"><i class="fa fa-star-half-o"></i> Upcoming</a></li>
                                                     </ul>
                 </li>
-                <!-- <li class="dropdown">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                       <i class="fa fa-file-video-o"></i> TV Show<span class="caret"></span>
                     </a>
@@ -56,7 +56,7 @@
                         <li><a href="/tv/onair/1"><i class="fa fa-list-alt"></i> On the Air</a></li>
                         <li><a href="/tv/popular/1"><i class="fa fa-star-half-o"></i> Popular TV Series</a></li>
                     </ul>
-                </li> -->
+                </li>
                 <li>&nbsp;</li>
             </ul>
             <form class="navbar-form" method="get" action="/">
@@ -89,9 +89,7 @@
       $('.movie-list img').addClass('img-responsive');
       $('.common img').addClass('img-responsive thumbnail');
       $('.similar-movie img').addClass('gird-pic img-responsive');
-      $('.similar-movie img').css({"height" : "105px", "width" : "100%"});
       $('.similar-tv img').addClass('gird-pic img-responsive');
-      $('.similar-tv img').css({"height" : "190px", "width" : "100%"});
     </script>
     @stack('scripts')
 
