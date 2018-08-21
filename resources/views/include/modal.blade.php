@@ -31,7 +31,7 @@
         <p>If you fail to comply with all of the requirements of Section 512(c)(3) of the DMCA, your DMCA Notice may not be effective.:</p>
         <p>Attn: DMCA Office</p>
         <p></p>
-        <p>Contact Us : <b>(26teka@outlook.com) phone number (+6281646976881) </b></p>
+        <p>Contact Us : <b>(mediastreamm@hotmail.com) phone number (+1 (209) 691-3368) </b></p>
         <p>.</p>
         <p>Please be aware that if you knowingly materially misrepresent that material or activity on Movie & TV Shows Putlocker is infringing your copyright, you may be held liable for damages (including costs and attorneys fees) under Section 512(f) of the DMCA..</p>
       </div>
