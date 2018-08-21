@@ -129,11 +129,12 @@ font-size: 26px;
 }
 
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 991px) {
     .similar-movie img {
-        height : 310px!important;
+        height : 350px!important;
     }
 }
+
 
 
 
