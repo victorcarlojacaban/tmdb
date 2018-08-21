@@ -98,7 +98,11 @@
             @foreach($tv->getSimilar() as $similartv)
                 <div class="col-md-2 col-sm-4 col-xs-4 similar-tv" style="padding:5px;">
                     <a href="/tv/show/{{ $similartv->getID() }}" title="{{ $similartv->getName() }}" title="{{ $similartv->getName() }}" class="text-center">
-                         {!! $image->getHtml($similartv->getPosterImage(), 'w154', 150, 320) !!}
+                        @if (!empty($image->getHtml($similartv->getPosterImage(), 'w154', 150, 320)))
+                            {!! $image->getHtml($similartv->getPosterImage(), 'w154', 150, 320) !!}
+                        @else
+                            <img src="/no-poster.jpg" class="img-responsive">
+                        @endif
                         <span style="font-size: 12px;background-color: rgba(0, 0, 0, 0.77);text-shadow: 1px 1px 1px #000;color: #FFF;padding: 5px;" class="nowrap">{{ $similartv->getName() }}</span>
                     </a>
                 </div>
