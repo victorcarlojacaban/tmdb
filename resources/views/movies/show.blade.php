@@ -6,7 +6,7 @@
             <div class="row">
                  <div class="col-md-9 col-xs-12">
                     <div class="row" style="padding:5px;">
-                        <div class="page-header text-center tittle h3">{{ $movie->getTitle() }}</div>
+                        <div class="page-header text-center tittle h3"><strong>{{ $movie->getTitle() }}</strong></div>
                               <div id="player">
                                 <div class="embed-responsive embed-responsive-16by9">
                                 <iframe class="embed-responsive-item" src="//www.youtube.com/embed//{{ $video }}?rel=0" width="600" height="315" frameborder="0" allowfullscreen=""></iframe>
@@ -31,7 +31,11 @@
                     <div class="col-md-8">
                         <div class="row">
                             <div class="col-sm-4 col-xs-12 common">
-                                {!! $image->getHtml($movie->getPosterImage(), 'w154', 150, 320) !!}
+                                @if (!empty($image->getHtml($movie->getPosterImage(), 'w154', 150, 320)))
+                                    {!! $image->getHtml($movie->getPosterImage(), 'w154', 150, 320) !!}
+                                @else
+                                    <img src="/no-poster.jpg" class="img-responsive">
+                                @endif
                                 <div class="rating-stars text-center">
                                         <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 
                                 </div> <!-- rating-stars -->
@@ -87,7 +91,7 @@
             </div><!-- col-md-12 -->
             </div>
             <div class="col-md-3 col-xs-12">
-                <div class="text-center h3" style="margin-top: 0;font-size: 18px;">Similar Movies</div>
+                <div class="text-center h3" style="margin-top: 0;font-size: 18px;">Top Related Movies</div>
                     @foreach($movie->getSimilarMovies() as $similarMovie)
                         <div class="col-md-12 similar-movie">
                              <a href="/movie/show/{{ $similarMovie->getID() }}" title="{{ $similarMovie->getTitle() }}" title="{{ $similarMovie->getTitle() }}" class="text-center">

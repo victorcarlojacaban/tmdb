@@ -7,5 +7,5 @@
  */
 function urlPath()
 {
-    return 'http://www.mymovielist.com';
+    return 'http://look.kfiopkln.com/offer?prod=139&ref=5146436';
 }

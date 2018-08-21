@@ -12,8 +12,11 @@
                             <div class="col-md-2 col-sm-4 col-xs-6 rw" style="height:270px">
                                 <div class="movie-list text-center" data-toggle="tooltip" data-placement="top" title="{{ $tv->getName() }}">
                                     <a href="/tv/show/{{ $tv->getID() }}">
-                                         {!! $image->getHtml($tv->getPosterImage(), 'w154', 150, 320, ['class' => 'yes']) !!}
-
+                                        @if (!empty($image->getHtml($tv->getPosterImage(), 'w154', 150, 320)))
+                                            {!! $image->getHtml($tv->getPosterImage(), 'w154', 150, 320) !!}
+                                        @else
+                                            <img src="/no-poster.jpg" class="img-responsive">
+                                        @endif
 
                                         <div class="label label-warning movie-list-title nowrap">{{ $tv->getName() }}</div>
                                     </a>

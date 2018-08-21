@@ -6,7 +6,7 @@
             <div class="row">
                  <div class="col-md-12 col-xs-12">
                     <div class="row" style="padding:5px;">
-                        <div class="page-header text-center tittle h3">{{ $tv->getName() }}</div>
+                        <div class="page-header text-center tittle h3"><strong>{{ $tv->getName() }}</strong></div>
                               <div id="player">
                                 <div class="embed-responsive embed-responsive-16by9">
                                 <iframe class="embed-responsive-item" src="//www.youtube.com/embed//{{ $video }}?rel=0" width="600" height="315" frameborder="0" allowfullscreen=""></iframe>
@@ -30,7 +30,11 @@
             <div class="col-md-12">
                 <div class="row">
                 <div class="col-sm-3 col-xs-12 common">
-                {!! $image->getHtml($tv->getPosterImage(), 'w780', 150, 320) !!}
+                @if (!empty($image->getHtml($tv->getPosterImage(), 'w154', 150, 320)))
+                    {!! $image->getHtml($tv->getPosterImage(), 'w154', 150, 320) !!}
+                @else
+                    <img src="/no-poster.jpg" class="img-responsive">
+                @endif
                 <div class="rating-stars text-center">
                     <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
                 </div> <!-- rating-stars -->
@@ -90,18 +94,14 @@
     </div><!-- tab-content  -->
         @include('include.comments')
         <div class="col-md-12">
-            <div class="text-center h3">Similar TV Series</div>
-            <?php $counter = 0;?>
+            <div class="text-center h3">Top Related TV Series</div>
             @foreach($tv->getSimilar() as $similartv)
-                 @if ($counter <=5)
-                    <div class="col-md-2 col-sm-4 col-xs-4 similar-tv">
-                        <a href="/tv/show/{{ $similartv->getID() }}" title="{{ $similartv->getName() }}" title="{{ $similartv->getName() }}" class="text-center">
-                             {!! $image->getHtml($similartv->getPosterImage(), 'w154', 150, 320) !!}
-                            <span style="font-size: 12px;background-color: rgba(0, 0, 0, 0.77);text-shadow: 1px 1px 1px #000;color: #FFF;padding: 5px;" class="nowrap">{{ $similartv->getName() }}</span>
-                        </a>
-                    </div>
-                @endif
-                <?php $counter++;?>
+                <div class="col-md-2 col-sm-4 col-xs-4 similar-tv" style="padding:5px;">
+                    <a href="/tv/show/{{ $similartv->getID() }}" title="{{ $similartv->getName() }}" title="{{ $similartv->getName() }}" class="text-center">
+                         {!! $image->getHtml($similartv->getPosterImage(), 'w154', 150, 320) !!}
+                        <span style="font-size: 12px;background-color: rgba(0, 0, 0, 0.77);text-shadow: 1px 1px 1px #000;color: #FFF;padding: 5px;" class="nowrap">{{ $similartv->getName() }}</span>
+                    </a>
+                </div>
             @endforeach             
         </div>
         @include('include.register-form')
