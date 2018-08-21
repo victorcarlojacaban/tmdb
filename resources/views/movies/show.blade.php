@@ -90,8 +90,8 @@
                     <?php $counter = 1;?>
                     @foreach($movie->getSimilarMovies() as $similarMovie)
                         @if ($counter <= 12)
-                        <div class="col-md-12">
-                            <div class="sm-movie col-sm-4" style="padding:20px">
+                        <div class="col-md-12 similar-movie">
+                       <!--      <div class="sm-movie col-sm-4" > -->
                                 <a href="/movie/show/{{ $similarMovie->getID() }}" title="{{ $similarMovie->getTitle() }}" title="{{ $similarMovie->getTitle() }}" class="text-center">
                                 @if (!empty($image->getHtml($similarMovie->getPosterImage(), 'w154', 150, 320)))
                                     {!! $image->getHtml($similarMovie->getPosterImage(), 'w154', 150, 320) !!}
@@ -100,7 +100,7 @@
                                 @endif
                                 <span style="font-size: 12px;background-color: rgba(0, 0, 0, 0.77);text-shadow: 1px 1px 1px #000;color: #FFF;padding: 5px;" class="nowrap">{{ $similarMovie->getTitle() }}</span>
                                 </a>
-                            </div>
+                           <!--  </div> -->
                         </div>
                         @endif
                         <?php $counter++ ?>
