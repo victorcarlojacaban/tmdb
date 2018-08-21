@@ -91,7 +91,7 @@
             </div><!-- col-md-12 -->
             </div>
             <div class="col-md-3 col-xs-12">
-                <div class="text-center h3" style="margin-top: 0;font-size: 18px;">Top Related Movies</div>
+                <div class="text-center h3" style="margin-top: 0;font-size: 18px;">Top Rated Movies</div>
                     <?php $counter = 1;?>
                     @foreach($movie->getSimilarMovies() as $similarMovie)
                         @if ($counter <= 12)

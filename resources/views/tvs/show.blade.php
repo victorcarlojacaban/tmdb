@@ -94,7 +94,7 @@
     </div><!-- tab-content  -->
         @include('include.comments')
         <div class="col-md-12">
-            <div class="text-center h3">Top Related TV Series</div>
+            <div class="text-center h3">Top Rated TV Series</div>
             @foreach($tv->getSimilar() as $similartv)
                 <div class="col-md-2 col-sm-4 col-xs-4 similar-tv" style="padding:5px;">
                     <a href="/tv/show/{{ $similartv->getID() }}" title="{{ $similartv->getName() }}" title="{{ $similartv->getName() }}" class="text-center">
