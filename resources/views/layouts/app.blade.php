@@ -79,12 +79,16 @@
   </div>
   <footer class="col-md-12 footer-deck">
   <div class="container">
-    <div class="col-sm-6">Copyright © 2018 | www.tmdb.com</div>
+    <div class="col-sm-6">Copyright © 2018 | www.mediastreamm.com</div>
     <div class="col-sm-6">
-        <button class="btn btn-default btn-sm pull-right" data-toggle="modal" data-target=".dcma" style="min-width: 100px;">DMCA</button> <button class="btn btn-default btn-sm pull-right" data-toggle="modal" data-target=".privacy" style="min-width: 100px;">Privacy Police</button> <button class="btn btn-default btn-sm pull-right" data-toggle="modal" data-target=".contact" style="min-width: 100px;">Contact Us</button>
+        <button class="btn btn-default btn-sm pull-right" data-toggle="modal" data-target=".dcma" style="min-width: 100px;">DMCA</button> 
+        <button class="btn btn-default btn-sm pull-right" data-toggle="modal" data-target=".privacy" style="min-width: 100px;">Privacy Police</button>
+        <button class="btn btn-default btn-sm pull-right" data-toggle="modal" data-target=".contact" style="min-width: 100px;">About Us</button>
     </div>
   </div>
 </footer>
+@include('include.modal')
+
    
     <script src="{{ asset('/js/app.js') }}" type="text/javascript"></script>
     <script type="text/javascript">

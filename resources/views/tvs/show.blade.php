@@ -76,7 +76,7 @@
         <div id="sectionB" class="tab-pane fade" style="padding-bottom:25px;">
         <div class="list-group" style="margin-top: 10px;">
             <a class="list-group-item" href="http://www.free26.tk/tv/65930-1/my-hero-academia.html" itemprop="season" itemscope itemtype="http://schema.org/TVSeason">
-            <span class="badge">April 03, 2016</span>
+            <span class="badge">April 03, 2018</span>
                 <span itemprop="name">Season 1</span> 
                 <span class="label label-info">13 Episodes</span>    
             </a>        
