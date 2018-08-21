@@ -27,7 +27,7 @@ class MovieController extends Controller
     {
         $movies = $this->movies->getTopRated(['page' => $id]);
 
-        $count = Tmdb::getMoviesApi()->getTopRated()['total_pages'];
+        $count = $this->getResourceCount($movies);
 
         return view('movies.top', compact('movies', 'count', 'id'));
     }
@@ -41,7 +41,7 @@ class MovieController extends Controller
     {
         $movies = $this->movies->getUpcoming(['page' => $id]);
 
-        $count = Tmdb::getMoviesApi()->getUpcoming()['total_pages'];
+        $count = $this->getResourceCount($movies);
 
         return view('movies.upcoming', compact('movies', 'count', 'id'));
     }
@@ -55,7 +55,7 @@ class MovieController extends Controller
     {
         $movies = $this->movies->getNowPlaying(['page' => $id]);
 
-        $count = Tmdb::getMoviesApi()->getNowPlaying()['total_pages'];
+        $count = $this->getResourceCount($movies);
 
         return view('movies.now-playing', compact('movies', 'count', 'id'));
     }

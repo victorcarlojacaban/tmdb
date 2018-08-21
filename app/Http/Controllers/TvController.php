@@ -27,7 +27,7 @@ class TvController extends Controller
     {
         $tvshows = $this->tvs->getAiringToday(['page' => $id]);
 
-        $count = Tmdb::getTvApi()->getAiringToday()['total_pages'];
+        $count = $this->getResourceCount($tvshows);
 
         return view('tvs.airing', compact('tvshows', 'count', 'id'));
     }
@@ -41,7 +41,7 @@ class TvController extends Controller
     {
         $tvshows = $this->tvs->getOnTheAir(['page' => $id]);
 
-        $count = Tmdb::getTvApi()->getOnTheAir()['total_pages'];
+        $count = $this->getResourceCount($tvshows);
 
         return view('tvs.onair', compact('tvshows', 'count', 'id'));
     }
@@ -55,7 +55,7 @@ class TvController extends Controller
     {
         $tvshows = $this->tvs->getPopular(['page' => $id]);
 
-        $count = Tmdb::getTvApi()->getPopular()['total_pages'];
+        $count = $this->getResourceCount($tvshows);
 
         return view('tvs.popular', compact('tvshows', 'count', 'id'));
     }
