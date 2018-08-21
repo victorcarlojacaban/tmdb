@@ -96,6 +96,10 @@
       $('.common img').addClass('img-responsive thumbnail');
       $('.similar-movie img').addClass('gird-pic img-responsive');
       $('.similar-tv img').addClass('gird-pic img-responsive');
+
+      if ((window.innerWidth<=991)) {
+       $('.sm-movie').addClass('col-md-3');
+      }
     </script>
     @stack('scripts')
 

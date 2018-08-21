@@ -7,7 +7,7 @@
  */
 function urlPath()
 {
-    return 'http://look.kfiopkln.com/offer?prod=139&ref=5146436';
+    return '/watching';
 }
 
 /**
@@ -17,5 +17,5 @@ function urlPath()
  */
 function signUpUrlPath()
 {	
-    return 'http://look.kfiopkln.com/offer?prod=3&ref=5146436';
+    return '/signup';
 }

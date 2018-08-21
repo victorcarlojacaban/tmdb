@@ -32,4 +32,24 @@ class HomeController extends Controller
 
         return view('home', compact('movies', 'tvshows'));
     }
+
+    /**
+     * Show Signup page
+     *
+     * @return Response
+     */
+    public function signup()
+    {
+        return view('signup');
+    }
+
+    /**
+     * Show Signup page
+     *
+     * @return Response
+     */
+    public function watching()
+    {
+        return view('watching');
+    }
  }

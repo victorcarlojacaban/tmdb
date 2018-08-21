@@ -15,6 +15,8 @@
 // Home page
 Route::get('/', 'HomeController@index');
 
+Route::get('/signup', 'HomeController@signup');
+Route::get('/watching', 'HomeController@watching');
 // Movies
 Route::get('movie/show/{id}', 'MovieController@show');
 Route::get('movie/toprated/{id}', 'MovieController@toprated');
