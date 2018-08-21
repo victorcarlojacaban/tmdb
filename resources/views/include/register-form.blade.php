@@ -68,7 +68,7 @@
                     </div>
                 </div>
                 <div class="modal-footer bg-info">
-                        <a class="btn btn-danger" href="{{ urlPath() }}">Sign Up For Free</a> 
+                        <a class="btn btn-danger" href="{{ signUpUrlPath() }}">Sign Up For Free</a> 
                 </div>
          </div>
     </div>
