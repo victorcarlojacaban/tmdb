@@ -3,7 +3,7 @@
 /**
  * return constant url
  *
- *  MAKE SURE TO POINT OUT HTTPS OR HTTP EVERYTIM YOU CHANGE URL
+ *  MAKE SURE TO POINT OUT HTTPS OR HTTP EVERYTIME YOU CHANGE URL
  */
 function urlPath()
 {
@@ -12,8 +12,8 @@ function urlPath()
 
 /**
  * return constant sign up url
- *
- *  MAKE SURE TO POINT OUT HTTPS OR HTTP EVERYTIM YOU CHANGE URL
+ * THIS is for Sign up button only
+ * MAKE SURE TO POINT OUT HTTPS OR HTTP EVERYTIME YOU CHANGE URL
  */
 function signUpUrlPath()
 {	
