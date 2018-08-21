@@ -92,7 +92,6 @@ font-size: 26px;
     }
 
 }
-
  .movie-list img {
         width: 100%;
     }
@@ -128,5 +127,13 @@ font-size: 26px;
 .common img {
     width: 100%;
 }
+
+
+@media only screen and (max-width: 800px) {
+    .similar-movie img {
+        height : 310px!important;
+    }
+}
+
 
 

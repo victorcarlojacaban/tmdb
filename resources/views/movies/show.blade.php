@@ -73,24 +73,19 @@
                         </div>
                     </div>
                      <div class="col-md-4">
-                          <table class="table table-striped">
-                            <tbody> 
-                              <tr>
-                                <td>
-                                   {{ $movie->getOverview() }}
-                                </td>
-                              </tr>
-                                  </tbody>
-                          </table>
+                      <table class="table table-striped">
+                        <tbody> 
+                          <tr>
+                            <td>
+                               {{ $movie->getOverview() }}
+                            </td>
+                          </tr>
+                              </tbody>
+                      </table>
                 </div>
-                </div> 
-            @include('include.comments')
-            <div class="col-md-12">
-                   <ul> <div class="text">This filename has been transmitted via an external affiliate, we can therefore furnish no guarantee for the existence of this file on our servers.
-                    <br>© 2005 - 2016</div></ul>
-            </div><!-- col-md-12 -->
+            </div> 
             </div>
-            <div class="col-md-3 col-xs-12">
+              <div class="col-md-3 col-xs-12">
                 <div class="text-center h3" style="margin-top: 0;font-size: 18px;">Top Rated Movies</div>
                     <?php $counter = 1;?>
                     @foreach($movie->getSimilarMovies() as $similarMovie)
@@ -108,6 +103,13 @@
                         @endif
                         <?php $counter++ ?>
                    @endforeach()
+            </div>
+            </div>
+            @include('include.comments')
+            <div class="col-md-12">
+                   <ul> <div class="text">This filename has been transmitted via an external affiliate, we can therefore furnish no guarantee for the existence of this file on our servers.
+                    <br>© 2005 - 2016</div></ul>
+            </div><!-- col-md-12 -->
             </div>
              @include('include.register-form')
             </div>
