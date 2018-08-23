@@ -31,6 +31,7 @@
                     <div class="col-md-8">
                         <div class="row">
                             <div class="col-sm-4 col-xs-12 common">
+                                <center>
                                 @if (!empty($image->getHtml($movie->getPosterImage(), 'w154', 150, 320)))
                                     {!! $image->getHtml($movie->getPosterImage(), 'w154', 150, 320) !!}
                                 @else
@@ -52,6 +53,7 @@
                                         {{ $movie->getVoteAverage() }}/10 by {{ $movie->getVoteCount() }}
 
                                 </div> <!-- rating-vote -->
+                            </center>
                             </div>
                             <div class="col-sm-8 col-xs-12">
                                 <table class="table table-striped">
@@ -101,7 +103,8 @@
                     <?php $counter = 1;?>
                     @foreach($movie->getSimilarMovies() as $similarMovie)
                         @if ($counter <= 6)
-                        <div class="col-md-12 similar-movie">
+                        <div class="col-md-12 similar-movie mvmv">
+                                
                        <!--      <div class="sm-movie col-sm-4" > -->
                                 <a href="/movie/show/{{ $similarMovie->getID() }}" title="{{ $similarMovie->getTitle() }}" title="{{ $similarMovie->getTitle() }}" class="text-center">
                                 @if (!empty($image->getHtml($similarMovie->getPosterImage(), 'w154', 150, 320)))
@@ -109,9 +112,8 @@
                                 @else
                                     <img src="/no-poster.jpg" class="img-responsive">
                                 @endif
-                                <span style="font-size: 12px;background-color: rgba(0, 0, 0, 0.77);text-shadow: 1px 1px 1px #000;color: #FFF;padding: 5px;" class="nowrap">{{ $similarMovie->getTitle() }}</span>
+                                <span style="font-size: 12px;background-color: rgba(0, 0, 0, 0.77);text-shadow: 1px 1px 1px #000;color: #FFF;padding: 10px;" class="nowrap">{{ $similarMovie->getTitle() }}</span>
                                 </a>
-                           <!--  </div> -->
                         </div>
                         @endif
                         <?php $counter++ ?>
