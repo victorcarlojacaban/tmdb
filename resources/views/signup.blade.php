@@ -1,7 +1,16 @@
 
 
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"</head><body><div style="text-align:center; margin-top:50px;">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script>
+	  gtag('event', 'conversion', {'send_to': 'AW-793735792/SPrwCPG644cBEPDkvfoC'});
+	</script>
+</head>
+<body>
+	<div style="text-align:center; margin-top:50px;">
     <img src="./location.gif" style="width:300px">
+    <!-- Event snippet for Google Conv MediaStream conversion page -->
 </div>
 <div style="text-align:center;">
     <div style="font-weight:600">Loading.... </div>

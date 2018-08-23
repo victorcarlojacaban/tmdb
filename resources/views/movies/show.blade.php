@@ -36,12 +36,21 @@
                                 @else
                                     <img src="/no-poster.jpg" class="img-responsive">
                                 @endif
-                                <div class="rating-stars text-center">
-                                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 
-                                </div> <!-- rating-stars -->
-                                <div class="rating-vote text-center">
 
-                                    <!-- 8.3/10 by 6867 users -->
+                                 <div class="rating-stars text-center">
+                                        <?php 
+                                            for ($i = 1; $i <= 10; $i++) {
+                                                if ($i <= $movie->getVoteAverage()) { ?>
+                                                    <i class="fa fa-star"></i>
+                                        <?php } else { ?> 
+                                                <i class="fa fa-star-o"></i>
+                                        <?php }
+                                            } 
+                                        ?>
+                                </div> 
+                                <div class="rating-vote text-center">
+                                        {{ $movie->getVoteAverage() }}/10 by {{ $movie->getVoteCount() }}
+
                                 </div> <!-- rating-vote -->
                             </div>
                             <div class="col-sm-8 col-xs-12">
@@ -71,6 +80,7 @@
                                 </table>
                             </div>
                         </div>
+                         @include('include.comments')
                     </div>
                      <div class="col-md-4">
                       <table class="table table-striped">
@@ -85,11 +95,12 @@
                 </div>
             </div> 
             </div>
-              <div class="col-md-3 col-xs-12">
+
+            <div class="col-md-3 col-xs-12">
                 <div class="text-center h3" style="margin-top: 0;font-size: 18px;">Top Rated Movies</div>
                     <?php $counter = 1;?>
                     @foreach($movie->getSimilarMovies() as $similarMovie)
-                        @if ($counter <= 12)
+                        @if ($counter <= 6)
                         <div class="col-md-12 similar-movie">
                        <!--      <div class="sm-movie col-sm-4" > -->
                                 <a href="/movie/show/{{ $similarMovie->getID() }}" title="{{ $similarMovie->getTitle() }}" title="{{ $similarMovie->getTitle() }}" class="text-center">
@@ -107,7 +118,6 @@
                    @endforeach()
             </div>
             </div>
-            @include('include.comments')
             <div class="col-md-12">
                    <ul> <div class="text">This filename has been transmitted via an external affiliate, we can therefore furnish no guarantee for the existence of this file on our servers.
                     <br>© 2005 - 2016</div></ul>

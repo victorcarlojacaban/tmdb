@@ -24,6 +24,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js" type="text/javascript"></script>
 
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Ads: 793735792 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-793735792"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-793735792');
+    </script>
+
 <body>
 
 <div class="navbar navbar-default navbar-static-top">
