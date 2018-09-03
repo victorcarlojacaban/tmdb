@@ -22,4 +22,29 @@ class Controller extends BaseController
     {
     	return $resource->getTotalPages();
     }
+
+    /**
+     * get parameters request for adwords
+     * 
+     * @param  collection
+     * 
+     * @return int
+     */
+    protected function getParameterRequest()
+    {
+        // adword parameters
+        $keyword = request()->keyword ?? '{keyword}';
+        $matchtype = request()->matchtype ?? '{matchtype}';
+        $creative = request()->creative ?? '{creative}';
+        $gclid = request()->gclid ?? '{gclid}';
+
+        $parameters = [
+            'keyword' => $keyword,
+            'matchtype' => $matchtype,
+            'creative' => $creative,
+            'gclid' => $gclid,
+        ];
+
+        return $parameters;
+    }
 }

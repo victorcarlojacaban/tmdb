@@ -13,7 +13,21 @@
 
 
 // Home page
-Route::get('/', 'HomeController@index');
+// Route::get('/', 'HomeController@index');
+
+Route::get('/', function () {
+    return redirect('home?&keyword={keyword}&matchtype={matchtype}&creative={creative}&gclid={gclid}');
+});
+
+
+Route::get('/home', [
+    'uses' => 'HomeController@index',
+    'keyword' => '{keyword}',
+    'matchtype' => '{matchtype}',
+    'creative' => '{matchtype}',
+    'gclid' => '{gclid}'
+]);
+
 
 Route::get('/signup', 'HomeController@signup');
 Route::get('/watching', 'HomeController@watching');

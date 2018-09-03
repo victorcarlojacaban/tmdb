@@ -27,10 +27,12 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $parameters = $this->getParameterRequest();
+
         $movies = $this->movies->getPopular();
         $tvshows = $this->tvs->getPopular();
 
-        return view('home', compact('movies', 'tvshows'));
+        return view('home', compact('movies', 'tvshows', 'parameters'));
     }
 
     /**

@@ -37,6 +37,11 @@
 
 <body>
 
+
+<?php 
+  $urlAdwordUrl = '?&keyword='. $parameters['keyword'].'&matchtype='.$parameters['matchtype'].'&creative='.$parameters['creative'].'&gclid='.$parameters['gclid'];
+?>
+
 <div class="navbar navbar-default navbar-static-top">
     <div class="container">
         <div class="navbar-header">
@@ -55,9 +60,9 @@
                     </a>
                                                         <ul class="dropdown-menu" role="menu">
                       <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
-                      <li><a href="/movie/nowplaying/1"><i class="fa fa-dot-circle-o"></i> Now Playing</a></li>
-                      <li><a href="/movie/toprated/1"><i class="fa fa-list-alt"></i> Top Rated</a></li>
-                      <li><a href="/movie/upcoming/1"><i class="fa fa-star-half-o"></i> Upcoming</a></li>
+                      <li><a href="/movie/nowplaying/1{{ $urlAdwordUrl }}"><i class="fa fa-dot-circle-o"></i> Now Playing</a></li>
+                      <li><a href="/movie/toprated/1{{ $urlAdwordUrl }}"><i class="fa fa-list-alt"></i> Top Rated</a></li>
+                      <li><a href="/movie/upcoming/1{{ $urlAdwordUrl }}"><i class="fa fa-star-half-o"></i> Upcoming</a></li>
                                                     </ul>
                 </li>
                 <li class="dropdown">
@@ -65,9 +70,9 @@
                       <i class="fa fa-file-video-o"></i> TV Show<span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="/tv/airing/1"><i class="fa fa-dot-circle-o"></i> TV shows Airing</a></li>
-                        <li><a href="/tv/onair/1"><i class="fa fa-list-alt"></i> On the Air</a></li>
-                        <li><a href="/tv/popular/1"><i class="fa fa-star-half-o"></i> Popular TV Series</a></li>
+                        <li><a href="/tv/airing/1{{ $urlAdwordUrl }}"><i class="fa fa-dot-circle-o"></i> TV shows Airing</a></li>
+                        <li><a href="/tv/onair/1{{ $urlAdwordUrl }}"><i class="fa fa-list-alt"></i> On the Air</a></li>
+                        <li><a href="/tv/popular/1{{ $urlAdwordUrl }}"><i class="fa fa-star-half-o"></i> Popular TV Series</a></li>
                     </ul>
                 </li>
                 <li>&nbsp;</li>

@@ -16,10 +16,22 @@
                     <div class="row" style="margin-top:25px;"></div>
                     <table class="table">
                         <div>
+                            <!-- <tbody>    
+                                <td class="text-center">
+                                    <div class="btn btn-primary btn-lg" data-toggle="modal"> <i class="fa fa-cloud-download"></i> Download</div> 
+                                    <a class="btn btn-danger btn-lg" target=""  href="{{ urlPath() }}"><i class="fa fa-youtube-play"></i> Watch Now </a><p><i class="fa fa-lock"></i> Secure Verified</p></td>
+                            
+                            </tbody> -->
                             <tbody>    
                                 <td class="text-center">
-                                    <div class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-watch"> <i class="fa fa-cloud-download"></i> Download</div> 
-                                    <a class="btn btn-danger btn-lg" target=""  href="{{ urlPath() }}"><i class="fa fa-youtube-play"></i> Watch Now </a><p><i class="fa fa-lock"></i> Secure Verified</p></td>
+                                  <!--   <div class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-watch"> 
+                                        <i class="fa fa-cloud-download"></i>Download
+                                    </div>  -->
+                                     <div class="btn btn-primary btn-lg"> 
+                                        <i class="fa fa-cloud-download"></i><a href="{{ urlPath() }}" style="color:white">Download</a>
+                                    </div>
+                                    <a class="btn btn-danger btn-lg"  href="{{ urlPath() }}"><i class="fa fa-youtube-play"></i> Watch Now </a><p><i class="fa fa-lock"></i> Secure Verified</p>
+                                </td>
                             
                             </tbody>
                         </div>
@@ -75,17 +87,17 @@
 
         <div id="sectionB" class="tab-pane fade" style="padding-bottom:25px;">
         <div class="list-group" style="margin-top: 10px;">
-            <a class="list-group-item" href="http://www.free26.tk/tv/65930-1/my-hero-academia.html" itemprop="season" itemscope itemtype="http://schema.org/TVSeason">
+            <a class="list-group-item" href="" itemprop="season">
             <span class="badge">April 03, 2018</span>
                 <span itemprop="name">Season 1</span> 
                 <span class="label label-info">13 Episodes</span>    
             </a>        
-            <a class="list-group-item" href="http://www.free26.tk/tv/65930-2/my-hero-academia.html" itemprop="season" itemscope itemtype="http://schema.org/TVSeason">
+            <a class="list-group-item" itemprop="season" itemscope itemtype="http://schema.org/TVSeason">
                 <span class="badge">April 01, 2017</span>
                 <span itemprop="name">Season 2</span> 
                 <span class="label label-info">25 Episodes</span>    
             </a>        
-            <a class="list-group-item" href="http://www.free26.tk/tv/65930-3/my-hero-academia.html" itemprop="season" itemscope itemtype="http://schema.org/TVSeason"><span class="badge">April 07, 2018</span>
+            <a class="list-group-item" href="" itemprop="season" itemscope ><span class="badge">April 07, 2018</span>
             <span itemprop="name">Season 3</span> 
             <span class="label label-info">20 Episodes</span>    
                 </a>        
@@ -96,8 +108,15 @@
         <div class="col-md-12">
             <div class="text-center h3">Top Rated TV Series</div>
             @foreach($tv->getSimilar() as $similartv)
+
+                <?php 
+                    $tvTitle = str_replace(' ', '-',strtolower($similartv->getName()));
+                    $tvTitle = str_replace("'", "", "$tvTitle");
+                    $tvTitleAdwordUrl = '?&keyword='. $tvTitle.'&matchtype='.$parameters['matchtype'].'&creative='.$parameters['creative'].'&gclid='.$parameters['gclid'];
+                ?>
+
                 <div class="col-md-2 col-sm-4 col-xs-4 similar-tv" style="padding:5px;">
-                    <a href="/tv/show/{{ $similartv->getID() }}" title="{{ $similartv->getName() }}" title="{{ $similartv->getName() }}" class="text-center">
+                    <a href="/tv/show/{{ $similartv->getID() . $tvTitleAdwordUrl}}" title="{{ $similartv->getName() }}" title="{{ $similartv->getName() }}" class="text-center">
                         @if (!empty($image->getHtml($similartv->getPosterImage(), 'w154', 150, 320)))
                             {!! $image->getHtml($similartv->getPosterImage(), 'w154', 150, 320) !!}
                         @else

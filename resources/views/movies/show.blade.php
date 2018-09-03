@@ -18,10 +18,13 @@
                         <div>
                             <tbody>    
                                 <td class="text-center">
-                                    <div class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-watch"> 
+                                  <!--   <div class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-watch"> 
                                         <i class="fa fa-cloud-download"></i>Download
-                                    </div> 
-                                    <a class="btn btn-danger btn-lg" target="" href="{{ urlPath() }}"><i class="fa fa-youtube-play"></i> Watch Now </a><p><i class="fa fa-lock"></i> Secure Verified</p>
+                                    </div>  -->
+                                     <div class="btn btn-primary btn-lg"> 
+                                        <i class="fa fa-cloud-download"></i><a href="{{ urlPath() }}" style="color:white">Download</a>
+                                    </div>
+                                    <a class="btn btn-danger btn-lg"  href="{{ urlPath() }}"><i class="fa fa-youtube-play"></i> Watch Now </a><p><i class="fa fa-lock"></i> Secure Verified</p>
                                 </td>
                             
                             </tbody>
@@ -102,11 +105,17 @@
                 <div class="text-center h3" style="margin-top: 0;font-size: 18px;">Top Rated Movies</div>
                     <?php $counter = 1;?>
                     @foreach($movie->getSimilarMovies() as $similarMovie)
+                        <?php 
+                            $movieTitle= str_replace(' ', '-',strtolower($similarMovie->getTitle()));
+                            $movieTitle = str_replace("'", "", "$movieTitle");
+                            $movieTitleAdwordUrl = '?&keyword='. $movieTitle.'&matchtype='.$parameters['matchtype'].'&creative='.$parameters['creative'].'&gclid='.$parameters['gclid'];
+                        ?>
+
                         @if ($counter <= 6)
                         <div class="col-md-12 similar-movie mvmv">
                                 
                        <!--      <div class="sm-movie col-sm-4" > -->
-                                <a href="/movie/show/{{ $similarMovie->getID() }}" title="{{ $similarMovie->getTitle() }}" title="{{ $similarMovie->getTitle() }}" class="text-center">
+                                <a href="/movie/show/{{ $similarMovie->getID() . $movieTitleAdwordUrl }}" title="{{ $similarMovie->getTitle() }}" title="{{ $similarMovie->getTitle() }}" class="text-center">
                                 @if (!empty($image->getHtml($similarMovie->getPosterImage(), 'w154', 150, 320)))
                                     {!! $image->getHtml($similarMovie->getPosterImage(), 'w154', 150, 320) !!}
                                 @else

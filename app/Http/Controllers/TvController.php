@@ -25,11 +25,13 @@ class TvController extends Controller
      */
     public function airing(Request $request, $id)
     {
+        $parameters = $this->getParameterRequest();
+
         $tvshows = $this->tvs->getAiringToday(['page' => $id]);
 
         $count = $this->getResourceCount($tvshows);
 
-        return view('tvs.airing', compact('tvshows', 'count', 'id'));
+        return view('tvs.airing', compact('tvshows', 'count', 'id', 'parameters'));
     }
 
      /**
@@ -39,11 +41,13 @@ class TvController extends Controller
      */
     public function onair(Request $request, $id)
     {
+        $parameters = $this->getParameterRequest();
+
         $tvshows = $this->tvs->getOnTheAir(['page' => $id]);
 
         $count = $this->getResourceCount($tvshows);
 
-        return view('tvs.onair', compact('tvshows', 'count', 'id'));
+        return view('tvs.onair', compact('tvshows', 'count', 'id', 'parameters'));
     }
 
     /**
@@ -53,11 +57,13 @@ class TvController extends Controller
      */
     public function popular(Request $request, $id)
     {
+        $parameters = $this->getParameterRequest();
+
         $tvshows = $this->tvs->getPopular(['page' => $id]);
 
         $count = $this->getResourceCount($tvshows);
 
-        return view('tvs.popular', compact('tvshows', 'count', 'id'));
+        return view('tvs.popular', compact('tvshows', 'count', 'id', 'parameters'));
     }
 
     /**
@@ -65,10 +71,12 @@ class TvController extends Controller
      */
     public function show($id)
     {
+        $parameters = $this->getParameterRequest(); 
+
     	$tv = $this->tvs->load($id);
 
         $video =  Tmdb::getTvApi()->getVideos($id)['results'][0]['key'] ?? null;
 
-        return view('tvs.show', compact('tv', 'video'));
+        return view('tvs.show', compact('tv', 'video', 'parameters'));
     }
 }

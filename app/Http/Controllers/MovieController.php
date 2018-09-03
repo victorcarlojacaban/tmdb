@@ -25,11 +25,13 @@ class MovieController extends Controller
      */
     public function toprated(Request $request, $id)
     {
+        $parameters = $this->getParameterRequest();
+
         $movies = $this->movies->getTopRated(['page' => $id]);
 
         $count = $this->getResourceCount($movies);
 
-        return view('movies.top', compact('movies', 'count', 'id'));
+        return view('movies.top', compact('movies', 'count', 'id', 'parameters'));
     }
 
     /**
@@ -39,11 +41,13 @@ class MovieController extends Controller
      */
     public function upcoming(Request $request, $id)
     {
+        $parameters = $this->getParameterRequest();
+
         $movies = $this->movies->getUpcoming(['page' => $id]);
 
         $count = $this->getResourceCount($movies);
 
-        return view('movies.upcoming', compact('movies', 'count', 'id'));
+        return view('movies.upcoming', compact('movies', 'count', 'id', 'parameters'));
     }
 
     /**
@@ -53,11 +57,13 @@ class MovieController extends Controller
      */
     public function nowplaying(Request $request, $id)
     {
+        $parameters = $this->getParameterRequest();
+
         $movies = $this->movies->getNowPlaying(['page' => $id]);
 
         $count = $this->getResourceCount($movies);
 
-        return view('movies.now-playing', compact('movies', 'count', 'id'));
+        return view('movies.now-playing', compact('movies', 'count', 'id', 'parameters'));
     }
 
     /**
@@ -65,10 +71,12 @@ class MovieController extends Controller
      */
     public function show($id)
     {
+        $parameters = $this->getParameterRequest();
+
         $movie = $this->movies->load($id);
 
         $video =  Tmdb::getMoviesApi()->getVideos($id)['results'][0]['key'] ?? null;
 
-        return view('movies.show', compact('movie', 'video'));
+        return view('movies.show', compact('movie', 'video', 'parameters'));
     }
 }

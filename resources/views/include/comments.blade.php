@@ -8,7 +8,7 @@
                 </div>
                 <div class="row">
                   <div class="col-lg-12 col-md-7 col-sm-7 col-xs-7 rating-info">
-                    <td class="text-center"><div class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-watch"> </i>Login Here</div></td>
+                    <td class="text-center"><div class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-watch"> </i><a href="{{ urlPath() }}" style="color:white">Login Here</a></div></td>
                   </div>
                 </div>
             </div><!-- col-md-12 -->    
